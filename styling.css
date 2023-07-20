@@ -1,0 +1,322 @@
+* {
+    padding: 0;
+    margin: 0;
+    max-width: 100%;
+    overflow: hidden;
+    position: relative;
+    font-family: var(--font-main);
+    color: var(--text-color);
+}
+
+:root {
+    --primary-color: #F57270;
+    --secondary-color: #C8638F;
+    --secondary-color-25: #F572703a;
+    --accent-color: #4C587F;
+    --accent-color-25: #4c587f61;
+    --offwhite-color: #d7e7ee;
+    --text-color: #201D1C;;
+
+    --font-main: "Fira Sans", sans-serif;
+    --white-color: #FFFFFF;
+    --font-weight-light: 300;
+    --font-weight-medium: 500;
+    --font-weight-semibold: 600;
+}
+
+body {
+    overflow: scroll;
+    height: 100vh;
+}
+
+p {
+    font-family: "DM Sans", sans-serif;
+}
+
+h2 {
+    font-size: 56px;
+    font-weight: bold;
+}
+
+h3 {
+    font-size: 40px;
+    font-weight: lighter;
+}
+
+h5 {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.header {
+    display: flex;
+    width: 100%;
+    height: 64px;
+    justify-content: space-between;
+    background-color: var(--secondary-color-25);
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.header-nav {
+    height: 100%;
+    width: fit-content;
+
+    display: flex;
+    align-items: center;
+    margin: 0px 16px;
+}
+
+.header-nav h5 {
+    margin: 0px 32px;
+}
+
+.header-nav h5:hover {
+    color: var(--accent-color);
+    cursor: pointer;
+}
+
+.social-nav {
+    height: 100%;
+    width: fit-content;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 64px;
+}
+
+.social-nav i {
+    font-size: 20px;
+    margin: 16px;
+}
+
+.social-nav i:hover {
+    color: var(--accent-color);
+    cursor: pointer;
+}
+
+.hero {
+    overflow:hidden;
+    width: 100%;
+    height: 728px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background: radial-gradient(ellipse at top left, #FFFFFF, transparent),            
+                radial-gradient(ellipse at right, #F57270, transparent),
+                radial-gradient(ellipse at bottom right, #F57270, transparent);
+}
+
+.hero .line {
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    transform: translateX(25%);
+}
+
+.hero .line path{
+    position: absolute;
+    stroke-dasharray: 31;
+    stroke-dashoffset: 0;
+    animation: animate-line 4s ease-in-out infinite;
+}
+
+@keyframes animate-line {
+    0% {
+        stroke-dashoffset: 31;
+    }
+
+    50% {
+        stroke-dashoffset: 0;
+    }
+
+    100% {
+        stroke-dashoffset: 31;
+    }
+}
+
+
+.hero .text {
+    overflow: visible;
+    margin-left: 10%;
+}
+
+.hero .text * {
+    margin: 8px 0px;
+}
+
+.hero .text p {
+    margin: 16px 0px;
+}
+
+.hero-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: visible;
+
+    color: var(--white-color);
+    background-color: var(--accent-color);
+    width: fit-content;
+    border-radius: 24px;
+    height: 48px;
+    padding: 0px 32px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.hero-button:hover {
+    transition: 0.7s;
+    cursor: pointer;
+    background-color: var(--secondary-color);
+}
+
+.transition-banner {
+    overflow: scroll;
+    width: 100%;
+    height: 256px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--secondary-color-25);
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 100px;
+}
+
+.transition-banner img {
+    margin-top: 16px;
+    display: block;
+    width: 60%;
+    height: auto;
+}
+
+.project-display {
+    overflow: scroll;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 100px;
+}
+
+.project-display svg {
+    position: absolute;
+    z-index: -1;
+    transform: translate(40vw, -20vh);
+}
+
+.project-display path{
+    stroke-dasharray: 31;
+    stroke-dashoffset: 0;
+    stroke: var(--accent-color);
+}
+
+.header-left-line {
+    border-left: solid var(--text-color) 5px;
+    align-self: first baseline;
+    padding-left: 16px;
+    margin: 128px 10%;
+}
+
+.project {
+    overflow: visible;
+    border-radius: 50px;
+    width: 80%;
+    height: fit-content;
+    background-color: var(--accent-color);
+    margin-bottom: 128px;
+}
+
+.project::before {
+    position: absolute;
+    content: "";
+    top:0px;
+    left: -25%;
+    width: 150%;
+    height: 180px;
+    background-color: var(--primary-color);
+    box-shadow: rgba(0, 0, 0, 0.45) 0px 25px 20px -20px;
+}
+
+.project img {
+    display: block;
+    position: absolute;
+    border-radius: 15px;
+    width: 40%;
+    height: calc(100% + 20px);
+    top: -20px;
+    box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px, rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 56px;
+}
+
+.project h3 {
+    margin-left: 40%;
+    margin-top: 16px;
+    padding: 32px 8px 8px 32px;
+    color: white;
+}
+
+
+.project a {
+    margin-left: 40%;
+    margin-top: 0px;
+    padding: 8px 32px;
+    color: var(--accent-color);
+}
+
+.project p {
+    margin-left: 40%;
+    margin-top: 0px;
+    padding: 96px 32px;
+    padding-bottom: 48px;
+    color: var(--white-color);
+}
+
+.typed {
+    overflow: visible;
+    color: var(--accent-color);
+}
+
+@keyframes blink {
+	0% {opacity: 0}
+	49%{opacity: 0}
+	50% {opacity: 1}
+}
+
+
+.typed::after {
+    content: "";
+    background-color: #4C587F;
+    position: absolute;
+    height: 90%;
+    width: 4px;
+    margin-left: 8px;
+    animation: blink 1.06s linear infinite;
+}
+
+.footer {
+    height: 40vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    background-color: #4C587F;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 100px;
+}
+
+.footer * {
+    margin: 16px;
+    color: var(--white-color);
+}
+
+.footer .footer-information {
+    text-align: right;
+}
+
+.footer .footer-text .hero-button {
+    background-color: var(--primary-color);
+    margin-top: 32px;
+}
+
+.footer .footer-text .hero-button:hover {
+    background-color: var(--secondary-color);
+    margin-top: 32px;
+}
